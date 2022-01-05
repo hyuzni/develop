@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue test</title>
+    <script src="/vue.js"></script><!-- cdn 주소 넣거나 lib 다운받아서 추가 -->
+</head>
+<body>
+    <!-- 라이프 사이클 훅 배우기 -->
+    <div id="app">
+        <div ref="msg">{{ msg }}</div>
+        <div ref="div"> </div>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello Vue!'
+            },
+            beforeCreate () {
+                console.log('beforeCreate!')
+                console.log(this.msg)
+                // vue 인스턴스가 생성되기 전이라 데이터를 정의하지 못함. 
+            },
+            created () {
+                console.log('created!')
+                console.log(this.msg)
+            },
+            beforeMount () {
+                console.log('beforeMount!')
+                console.log(this.$refs.div)
+                // dom 이 생성되기 전이라 데이터가 연결되지 않음. 데이터를 찾을 수 없음
+            },
+            mounted () {
+                console.log('mounted!')
+                console.log(this.$refs.div)
+            },
+            beforeUpdate () {
+                // data의 변화가 있을 때 실행됨. 변화가 일어나기 직전 데이터 출력
+                // update 관련 함수는 watch 와 같이 쓸 때 문제가 발생할 수 있으니 조심해서 써야함
+                console.log('before update!', this.$refs.msg.innerText)
+            },
+            updated () {
+                console.log('updated!', this.$refs.msg.innerText)
+            },
+            beforeDestroy () {
+                // vm.$destroy 로 인해 실행됨. 인스턴스가 삭제되며 인스턴스의 역할, 반응성이 사라짐.(필요없는 인스턴스로 인해 메모리를 잡아먹을 경우 삭제할 수 있음)
+                console.log('beforeDestroy!')
+            },
+            destroyed () {
+                console.log('destroyed!')
+            }
+        })
+    </script>
+</body>
+</html>
