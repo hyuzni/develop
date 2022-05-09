@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/* @font-face {
+    font-family: 'NanumGothicC';
+    font-style: lighter;
+    font-weight: 400;
+    src: url('../fonts/NanumGothicLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumGothicC';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/NanumGothicCoding-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumGothicC';
+    font-style: bold;
+    font-weight: 700;
+    src: url('../fonts/NanumGothicCoding-Bold.ttf') format('truetype');
+}
+  @font-face {
+    font-family: 'NanumPenS';
+    src: url('../fonts/NanumPenScript-Regular.ttf') format('truetype');
+} */
+
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+  }
+  /* HTML5 display-role reset for order browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  ul,
+  li,
+  ol,
+  dl {
+    list-style: none;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  button {
+      cursor: pointer;
+  }
+  
+/* CUSTOM BASE SETTING */
+html {
+  width: 100%;
+  height: 100%;
+  /* font-family: NanumGothicC, sans-serif; */
+  font-weight: 400;
+  color: #262626;
+  font-size: 14px;
+}
+strong,
+b {
+  font-weight: 700;
+}
+
+/* Accessibility */
+.blind {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: insert(50%);
+  margin: -1px;
+}
+caption.blind {
+  display: table-caption;
+  height: 1px;
+  margin-bottom: -1px;
+  position: static;
+}
+
+/* clear-fix */
+.clear-fix {
+  *zoom: 1;
+}
+.clear-fix::after {
+  content: "";
+  display: block;
+  clear: both;
+} 
