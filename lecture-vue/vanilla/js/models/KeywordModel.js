@@ -2,14 +2,14 @@ export default {
     data: [
         { keyword: "that that" },
         { keyword: "I like that" },
-        { keyword: "Can you feel me" },
+        { keyword: "Can you feel it" },
     ],
 
     list() {
         return new Promise(res => {
             setTimeout(() => {
-                res(this.data)
-            }, 200)
-        })
+                res(this.data);
+            }, 200);
+        });
     }
-}
+};

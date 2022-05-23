@@ -6,23 +6,24 @@ export default {
     ],
 
     list() {
-        return Promise.resolve(this.data)
+        return Promise.resolve(this.data);
     },
 
     add(keyword = ""){
-        keyword = keyword.trim()
-        if(!keyword) return
+        keyword = keyword.trim();
+        if(!keyword) return;
         if(this.data.some(item => item.keyword === keyword)) {
-            this.remove(keyword)
+            this.remove(keyword);
         }
 
-        const date = "2022.05.01"
-        this.data = [{keyword, date}, ...this.data]
+        const date = "2022.05.01";
+        this.data = [{keyword, date}, ...this.data];
 
     },
 
     remove(keyword) {
-        this.data = this.data.filter(item => item.keyword !== keyword)
+        console.log("remove()", keyword)
+        this.data = this.data.filter(item => item.keyword !== keyword);
     }
 
-} 
+}; 

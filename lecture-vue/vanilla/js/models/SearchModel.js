@@ -7,14 +7,14 @@ const data = [
         id: 2,
         name: "아자차카타파하"
     }
-]
+];
 
 export default {
     list(query) {
         return new Promise(res => {
             setTimeout(() => {
-                res(data)
-            }, 200)
-        })
+                res(data);
+            }, 200);
+        });
     }
-}
+};
